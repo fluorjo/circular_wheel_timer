@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "package:flutter/foundation.dart";
 
 class Wheel extends StatefulWidget {
   const Wheel({Key? key}) : super(key: key);
@@ -75,9 +76,11 @@ class _WheelState extends State<Wheel> {
     bool movingClockwise = rotationalChange > 0;
     bool movingCounterClockwise = rotationalChange < 0;
 
+    var rrr = rotationalChange.round();
+    
     setState(() {
       _movement = rotationalChange;
-      _seconds = _seconds + rotationalChange;
+      _seconds = _seconds + rrr;
     });
 
     // Now do something interesting with these computations!
