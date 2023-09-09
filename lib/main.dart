@@ -1,3 +1,4 @@
+import 'package:circular_wheel/wheel.dart';
 import 'package:flutter/material.dart';
 
 List images = [
@@ -22,9 +23,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(brightness: Brightness.dark),
-      home: const Scaffold(
-        body: IPod(),
-      ),
+      home:Wheel(),
+
+      //home: const Scaffold(
+      //  body: IPod(),
+      //),
     );
   }
 }

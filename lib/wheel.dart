@@ -11,6 +11,7 @@ class _WheelState extends State<Wheel> {
   final double radius = 150;
 
   double _movement = 0;
+  double _seconds = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +24,11 @@ class _WheelState extends State<Wheel> {
             style: Theme.of(context).textTheme.bodyLarge,
           ),
           Text('$_movement'),
+          Text(
+            _seconds > 0 ? 'Clockwise' : 'Counter-Clockwise',
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+          Text('$_seconds'),
           GestureDetector(
               onPanUpdate: _panHandler,
               child: Container(
@@ -71,6 +77,7 @@ class _WheelState extends State<Wheel> {
 
     setState(() {
       _movement = rotationalChange;
+      _seconds = _seconds + rotationalChange;
     });
 
     // Now do something interesting with these computations!
