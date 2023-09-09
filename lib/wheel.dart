@@ -72,14 +72,15 @@ class _WheelState extends State<Wheel> {
 
     // Total computed change
     double rotationalChange = vert + horz;
+    double rotationalChange2 = rotationalChange.roundToDouble();
 
     bool movingClockwise = rotationalChange > 0;
     bool movingCounterClockwise = rotationalChange < 0;
 
     var rrr = rotationalChange.round();
-    
+
     setState(() {
-      _movement = rotationalChange;
+      _movement = rotationalChange2;
       _seconds = _seconds + rrr;
     });
 
