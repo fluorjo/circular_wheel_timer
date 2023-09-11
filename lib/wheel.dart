@@ -37,7 +37,7 @@ class _WheelState extends State<Wheel> {
                 width: radius * 2,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.red,
+                  color: Colors.blueGrey,
                 ),
               )),
         ],
