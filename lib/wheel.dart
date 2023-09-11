@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import "package:flutter/foundation.dart";
-
+import 'dart:math' show pi;
 class Wheel extends StatefulWidget {
   const Wheel({Key? key}) : super(key: key);
 
@@ -37,7 +37,19 @@ class _WheelState extends State<Wheel> {
                 width: radius * 2,
                 decoration: const BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Colors.blueGrey,
+                  gradient: SweepGradient(
+                    center: FractionalOffset.center,
+                    colors: <Color>[
+                      Color(0xFF4285F4), // blue
+                      Color(0xFF34A853), // green
+                      Color(0xFFFBBC05), // yellow
+                      Color(0xFFEA4335), // red
+                      Color(
+                          0xFF4285F4), // blue again to seamlessly transition to the start
+                    ],
+                    stops: <double>[0.0, 0.25, 0.5, 0.75, 1.0],
+                    transform: GradientRotation(pi / 4),
+                  ),
                 ),
               )),
         ],
