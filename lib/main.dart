@@ -1,3 +1,4 @@
+import 'package:circular_wheel/cunstompainter.dart';
 import 'package:circular_wheel/wheel.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(brightness: Brightness.dark),
-      home:Wheel(),
+      home:DrawArcPractice(),
 
       //home: const Scaffold(
       //  body: IPod(),
